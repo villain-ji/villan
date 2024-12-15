@@ -11,7 +11,7 @@ from AnonXMusic.utils.database import get_client
 async def leave_ass(_, msg: Message):
     rep = await msg.reply_text("Running leave all...")
     left, failed = 0, 0
-    assnum = message.command[0][-1]
+    assnum = msg.command[0][-1]
     ub = await get_client(assnum)
     async for dialog in ub.get_dialogs():
         if dialog.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP, ChatType.CHANNEL]:
