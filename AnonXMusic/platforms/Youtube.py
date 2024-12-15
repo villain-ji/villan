@@ -65,11 +65,7 @@ class YouTubeAPI:
                         return entity.url
         if offset in (None,):
             return None
-
-        umm = text[offset : offset + length]
-        if "?si=" in umm:
-            umm = umm.split("?si=")[0]
-        return umm
+        return text[offset : offset + length]
 
     async def details(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
@@ -252,7 +248,6 @@ class YouTubeAPI:
                 "geo_bypass": True,
                 "nocheckcertificate": True,
                 "quiet": True,
-                "cookiefile": "cookies.txt",
                 "no_warnings": True,
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
@@ -270,7 +265,6 @@ class YouTubeAPI:
                 "geo_bypass": True,
                 "nocheckcertificate": True,
                 "quiet": True,
-                "cookiefile": "cookies.txt",
                 "no_warnings": True,
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
@@ -290,7 +284,6 @@ class YouTubeAPI:
                 "geo_bypass": True,
                 "nocheckcertificate": True,
                 "quiet": True,
-                "cookiefile": "cookies.txt",
                 "no_warnings": True,
                 "prefer_ffmpeg": True,
                 "merge_output_format": "mp4",
@@ -306,7 +299,6 @@ class YouTubeAPI:
                 "geo_bypass": True,
                 "nocheckcertificate": True,
                 "quiet": True,
-                "cookiefile": "cookies.txt",
                 "no_warnings": True,
                 "prefer_ffmpeg": True,
                 "postprocessors": [
