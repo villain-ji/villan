@@ -9,7 +9,7 @@ from AnonXMusic.utils.database import get_client
 
 @app.on_message(filters.command(["leaveall1", "leaveall2", "leaveall3", "leaveall4", "leaveall5"]) & SUDOERS)
 async def leave_ass(_, msg: Message):
-    rep = await message.reply_text("Running leave all...")
+    rep = await msg.reply_text("Running leave all...")
     left, failed = 0, 0
     assnum = message.command[0][-1]
     ub = await get_client(assnum)
